@@ -7,7 +7,18 @@ import click
 from .api import BoundingBox, HoydedataClient
 
 
-@click.group()
+EPILOG = """
+Examples:
+
+  terrenghenter fetch --lat 59.9639 --lon 10.6683 --width 1000 --height 1000 -o terrain.tif
+  terrenghenter fetch-bbox --min-lat 59.9 --min-lon 10.6 --max-lat 60.0 --max-lon 10.8 -o area.tif
+  terrenghenter info terrain.tif
+
+Run 'terrenghenter COMMAND --help' for more options.
+"""
+
+
+@click.group(epilog=EPILOG)
 @click.version_option()
 def cli():
     """Fetch Norwegian terrain data from høydedata.no."""
