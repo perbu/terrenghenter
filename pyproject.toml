@@ -1,0 +1,20 @@
+[project]
+name = "terrenghenter"
+version = "0.1.0"
+description = "Fetch Norwegian terrain data from høydedata.no"
+readme = "README.md"
+license = "BSD-2-Clause"
+requires-python = ">=3.10"
+dependencies = [
+    "click>=8.3.1",
+    "httpx>=0.28.1",
+    "pyproj>=3.7.1",
+    "rasterio>=1.4.4",
+]
+
+[project.scripts]
+terrenghenter = "terrenghenter.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
